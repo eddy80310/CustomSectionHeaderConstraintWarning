@@ -13,13 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var myTableView: UITableView!
     
     var xibRef: myHeaderView!
-    var numberOfSection = 3
+    var numberOfSection = 30
+    var testCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.delegate = self
         myTableView.dataSource = self
-        myTableView.estimatedSectionHeaderHeight = 394 + 80*3
+        
         
         // Register Xib
         let nib = UINib(nibName: "myHeaderView", bundle: nil)
@@ -33,6 +34,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addRowBtnPressed(sender: AnyObject) {
+        
+        testCounter = 0
+        
         numberOfSection += 1
         let sections = NSIndexSet(index: numberOfSection - 1)
         myTableView.insertSections(sections, withRowAnimation: .None)
@@ -50,21 +54,31 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return numberOfSection
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 30
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
+    func tableView(tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return view.frame.size.width + 80*3
+    }
+    
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        print("testCounter \(testCounter)")
+        testCounter += 1
+        
         let cell = tableView.dequeueReusableHeaderFooterViewWithIdentifier("myHeaderView") as! myHeaderView
         
         return cell

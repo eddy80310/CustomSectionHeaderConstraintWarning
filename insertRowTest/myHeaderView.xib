@@ -52,8 +52,8 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhB-wf-dvV">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="394"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBd-oW-z21">
-                                            <rect key="frame" x="149" y="186" width="96" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBd-oW-z21">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="394"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -61,23 +61,32 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.79215686269999996" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="cBd-oW-z21" secondAttribute="trailing" id="E5Y-vq-Q9O"/>
+                                        <constraint firstItem="cBd-oW-z21" firstAttribute="top" secondItem="RhB-wf-dvV" secondAttribute="top" id="EnE-4i-0qg"/>
                                         <constraint firstItem="cBd-oW-z21" firstAttribute="centerY" secondItem="RhB-wf-dvV" secondAttribute="centerY" id="faX-Hj-yza"/>
                                         <constraint firstAttribute="width" secondItem="RhB-wf-dvV" secondAttribute="height" multiplier="1:1" constant="1" id="oBP-oQ-eab"/>
                                         <constraint firstItem="cBd-oW-z21" firstAttribute="centerX" secondItem="RhB-wf-dvV" secondAttribute="centerX" id="qIl-2r-upY"/>
+                                        <constraint firstItem="cBd-oW-z21" firstAttribute="leading" secondItem="RhB-wf-dvV" secondAttribute="leading" id="uWY-jF-Z7L"/>
+                                        <constraint firstAttribute="bottom" secondItem="cBd-oW-z21" secondAttribute="bottom" id="xvk-Ld-6jh"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="oBP-oQ-eab"/>
+                                            <exclude reference="faX-Hj-yza"/>
+                                            <exclude reference="qIl-2r-upY"/>
                                         </mask>
                                     </variation>
                                 </view>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="IDK-sO-cLO" secondAttribute="height" multiplier="1:1" id="AYS-V8-8fI"/>
+                                <constraint firstAttribute="height" constant="394" id="kYf-Ey-hKy"/>
                                 <constraint firstAttribute="height" constant="80" id="rj5-g2-tU6"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
+                                    <exclude reference="AYS-V8-8fI"/>
+                                    <exclude reference="kYf-Ey-hKy"/>
                                     <exclude reference="rj5-g2-tU6"/>
                                 </mask>
                             </variation>
@@ -117,7 +126,6 @@
                     </variation>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="6Hl-Qe-EpL" secondAttribute="bottom" id="0YY-Ur-YeD"/>
                 <constraint firstAttribute="trailing" secondItem="6Hl-Qe-EpL" secondAttribute="trailing" id="6hK-54-zqW"/>
